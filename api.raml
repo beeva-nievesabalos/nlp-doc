@@ -1,0 +1,414 @@
+#%RAML 0.8
+title: NLP-API
+version: 2
+baseUri: https://54.171.58.131:5000
+documentation:
+  - title: NLP-API
+    content: Created June 2015
+schemas:
+  - text: | 
+      {
+        "type": "object",
+        "description": "text extracted or URL containing text",
+        "$schema": "http://json-schema.org/draft-03/schema",
+        "required": true,
+        "properties": {
+          "text": {
+            "type": "string",
+            "required": true
+          }
+        }
+      }
+  - url: |
+      {
+        "type": "object",
+        "description": "url containing the doc",
+        "$schema": "http://json-schema.org/draft-03/schema",
+        "required": true,
+        "properties": {
+          "url": {
+            "type": "string",
+            "required": true
+          }
+        }
+      } 
+  - sentence: |
+      {
+        "type": "object",
+        "description": "well-formed sentence",
+        "$schema": "http://json-schema.org/draft-03/schema",
+        "required": true,
+        "properties": {
+          "url": {
+            "type": "string",
+            "required": true
+          }
+        }
+      } 
+
+/extracturl:
+  displayName: Extract URL
+  description: Extract text from URL
+  get:
+    queryParameters:
+      url:
+        displayName: URL
+        type: string
+        description: URL to extract
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              { "message": "Text extracted from URL",
+                "text": "Example text",
+                "title": "Example title"}
+  post:
+    body:
+      application/json:
+        schema: url
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              { "message": "Text extracted from URL" ,
+                "text": "Example text",
+                "title": "Example title"}
+    
+
+/language:
+  displayName: Language extraction
+  description: Returns language (ISO 639-1)
+  get:
+    queryParameters:
+      text:
+        displayName: url
+        type: string
+        description: URL containing the text
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              { "message": "Language extracted from text" ,
+                "language": "en"}
+  post:
+    body:
+      application/json:
+        schema: text
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              { "message": "Language extracted from text" ,
+                "language": "en"}
+                            
+/entities:
+  displayName: Entity extraction
+  description: Extracts named entities, addresses, telephones, e-mail, social id, hashtags and dates from text. Supported english and spanish.
+  get:
+    queryParameters:
+      text:
+        displayName: url
+        type: string
+        description: URL containing the text
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              { "message": "Entities extracted from text" ,
+                "entitites": [
+                  {"count": 1, "category": "person", "name": "Steve Jobs"}
+                  {"count": 1, "category": "location", "name":  "Palo Alto, CA"},
+                  {"count": 3, "category": "organization", "name":  "Apple"},
+                  {"count": 1, "category": "date", "name":  "Monday"},
+                  {"count": 1, "category": "email", "name":  "contact@apple.com"},
+                  {"count": 1, "category": "telephone", "name":  "+44657892456"}                             
+                ]
+              }
+  post:
+    body:
+      application/json:
+        schema: text
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              { "message": "Entities extracted from text" ,
+                "entitites": [
+                  {"count": 1, "category": "person", "name": "Steve Jobs"}
+                  {"count": 1, "category": "location", "name":  "Palo Alto, CA"},
+                  {"count": 3, "category": "organization", "name":  "Apple"},
+                  {"count": 1, "category": "date", "name":  "Monday"},
+                  {"count": 1, "category": "email", "name":  "contact@apple.com"},
+                  {"count": 1, "category": "telephone", "name":  "+44657892456"}                             
+                ]
+              }
+                        
+/keywords:
+  displayName: Keyword extraction
+  description: Extracts most relevant words in text (tf-idf). Supported english and spanish. 
+  get:
+    queryParameters:
+      text:
+        displayName: url
+        type: string
+        description: URL containing the text
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              { "message": "Keywords extracted from text" ,
+                "keywords": [
+                  {"name" : "innovation", "score": 02351},
+                  {"name" : "smartphone", "score": 0.19011},
+                  {"name" : "applications", "score": 0.1233},
+                  {"name" : "store", "score": 0.0660}                      
+                ]
+              }
+  post:
+    body:
+      application/json:
+        schema: text  
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              { "message": "Keywords extracted from text" ,
+                "keywords": [
+                  {"name" : "innovation", "score": 02351},
+                  {"name" : "smartphone", "score": 0.19011},
+                  {"name" : "applications", "score": 0.1233},
+                  {"name" : "store", "score": 0.0660}                      
+                ]
+              }
+                        
+/concepts:
+  displayName: Concept extraction
+  description: Extracts concepts (Linked Data entity + semantic type). 
+  get:
+    queryParameters:
+      text:
+        displayName: url
+        type: string
+        description: URL containing the text
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              { "message": "Concepts extracted from text" ,
+                "concepts": [
+                  {"concept": 
+                    {"lang": "en", 
+                    "name": "Christopher Lee", 
+                    "notable": 
+                      {"name": "Actor", 
+                      "id": "/m/02hrh1q"}, 
+                    "mid": "/m/0f0kz", 
+                    "score": "693.999817", 
+                    "id": "/en/chistopher_lee"}, 
+                  "name": "Christopher Lee"},
+                  {"concept": "https://twitter.com/mayoroflondon", 
+                  "name": "@mayoroflondon"}, 
+                  {"concept": "https://twitter.com/hashtag/christopherlee", 
+                  "name": "#christopherlee"}                    
+                ]
+              }
+  post:
+    body:
+      application/json:
+        schema: text 
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              { "message": "Concepts extracted from text" ,
+                "concepts": [
+                  {"concept": 
+                    {"lang": "en", 
+                    "name": "Christopher Lee", 
+                    "notable": 
+                      {"name": "Actor", 
+                      "id": "/m/02hrh1q"}, 
+                    "mid": "/m/0f0kz", 
+                    "score": "693.999817", 
+                    "id": "/en/chistopher_lee"}, 
+                  "name": "Christopher Lee"},
+                  {"concept": "https://twitter.com/mayoroflondon", 
+                  "name": "@mayoroflondon"}, 
+                  {"concept": "https://twitter.com/hashtag/christopherlee", 
+                  "name": "#christopherlee"}                    
+                ]
+              }
+                        
+/relatedwords:
+  displayName: Related words extraction
+  description: Returns words related to entities and most relevant words in text. Supported english and spanish.
+  get:
+    queryParameters:
+      text:
+        displayName: url
+        type: string
+        description: URL containing the text
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              { "message": "Related words extracted from text" ,
+                "relatedwords": [
+                  {"word": "dracula", 
+                  "similarwords": [
+                    {"name": "stoker", "similarity": 0.6398248076438904}, 
+                    {"name": "bram", "similarity": 0.6193088293075562}, 
+                    {"name": "vampire", "similarity": 0.6130403280258179}, 
+                    {"name": "frankenstein", "similarity": 0.6062221527099609}, 
+                    {"name": "lugosi", "similarity": 0.5823888182640076}
+                  ]
+                  }                      
+                ]
+              }
+  post:
+    body:
+      application/json:
+        schema: text
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              { "message": "Related words extracted from text" ,
+                "relatedwords": [
+                  {"word": "dracula", 
+                  "similarwords": [
+                    {"name": "stoker", "similarity": 0.6398248076438904}, 
+                    {"name": "bram", "similarity": 0.6193088293075562}, 
+                    {"name": "vampire", "similarity": 0.6130403280258179}, 
+                    {"name": "frankenstein", "similarity": 0.6062221527099609}, 
+                    {"name": "lugosi", "similarity": 0.5823888182640076}
+                  ]
+                  }                      
+                ]
+              }
+                        
+
+/relationextraction:
+  displayName: Relation extraction
+  description: Extracts things related to other things in a sentence, that is, extracts the subject, object and verb in a sentence. Supported english and spanish.
+  get:
+    queryParameters:
+      text:
+        displayName: url
+        type: string
+        description: URL containing the text
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              { "message": "Relation extraction" ,
+                "relations": [
+                  {"verb": "has died", "object": "at the age after being hospitalised for respiratory problems", "subject": "Sir Christopher Lee"}
+                ]
+              }
+  post:
+    body:
+      application/json:
+        schema: text
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              { "message": "Relation extraction" ,
+                "relations": [
+                  {"verb": "has died", "object": "at the age after being hospitalised for respiratory problems", "subject": "Sir Christopher Lee"}
+                ]
+              }
+
+/emojisextraction:
+  displayName: Emojis extraction
+  description: Extracts emojis in a sentence.
+  get:
+    queryParameters:
+      text:
+        displayName: url
+        type: string
+        description: URL containing the text
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              { "message": "Emojis extraction" ,
+                "emojis": [
+                  {"count": 2, "description": [{"category": "People", "name": "VICTORY HAND"}], "emoji": "\u270c"}
+                ]
+              }
+  post:
+    body:
+      application/json:
+        schema: text
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              { "message": "Emojis extraction" ,
+                "emojis": [
+                  {"count": 2, "description": [{"category": "People", "name": "VICTORY HAND"}], "emoji": "\u270c"}
+                ]
+              }
+
+
+/socialextraction:
+  displayName: Hashtags and social ids extraction 
+  description: Extracts hashtags and ids from Twitter and Instagram in a sentence.
+  get:
+    queryParameters:
+      text:
+        displayName: url
+        type: string
+        description: URL containing the text
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              { "message": "Social information extraction" ,
+                {"social": 
+                  {
+                    "hashtags": 
+                      [{"count": 1, "link": "https://twitter.com/hashtag/legend", "type": "twitter", "name": "#legend"}, {"count": 1, "link": "https://twitter.com/hashtag/christopherlee", "type": "twitter", "name": "#christopherlee"}], 
+                    "users": 
+                      [{"count": 1, "link": "https://twitter.com/omid9", "type": "twitter", "name": "@omid9"}, {"count": 1, "link": "https://twitter.com/domswildthings", "type": "twitter", "name": "@domswildthings"}, {"count": 1, "link": "https://twitter.com/woodelijah", "type": "twitter", "name": "@woodelijah"}]
+                  }
+                }
+              }
+  post:
+    body:
+      application/json:
+        schema: text
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              { "message": "Social information extraction" ,
+                {"social": 
+                  {
+                    "hashtags": 
+                      [{"count": 1, "link": "https://twitter.com/hashtag/legend", "type": "twitter", "name": "#legend"}, {"count": 1, "link": "https://twitter.com/hashtag/christopherlee", "type": "twitter", "name": "#christopherlee"}], 
+                    "users": 
+                      [{"count": 1, "link": "https://twitter.com/omid9", "type": "twitter", "name": "@omid9"}, {"count": 1, "link": "https://twitter.com/domswildthings", "type": "twitter", "name": "@domswildthings"}, {"count": 1, "link": "https://twitter.com/woodelijah", "type": "twitter", "name": "@woodelijah"}]
+                  }
+                }
+              }              

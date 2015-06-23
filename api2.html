@@ -1,0 +1,382 @@
+<!DOCTYPE HTML><html><head><title>NLP-API API documentation</title><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="generator" content="https://github.com/kevinrenskers/raml2html 1.5.0"><link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"><link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css"><script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script><script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script><script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script><script type="text/javascript">
+        $(document).ready(function() {
+            $('.page-header pre code, .top-resource-description pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+
+            $('[data-toggle]').click(function() {
+                var selector = $(this).data('target') + ' pre code';
+                $(selector).each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });
+            });
+        });
+    </script><style>
+        .hljs {
+            background: transparent;
+        }
+        .parent {
+            color: #999;
+        }
+        .list-group-item > .badge {
+            float: none;
+            margin-right: 6px;
+        }
+        .panel-title > .methods {
+            float: right;
+        }
+        .badge {
+            border-radius: 0;
+            text-transform: uppercase;
+            width: 70px;
+            font-weight: normal;
+            color: #f3f3f6;
+            line-height: normal;
+        }
+        .badge_get {
+            background-color: #63a8e2;
+        }
+        .badge_post {
+            background-color: #6cbd7d;
+        }
+        .badge_put {
+            background-color: #22bac4;
+        }
+        .badge_delete {
+            background-color: #d26460;
+        }
+        .badge_patch {
+            background-color: #ccc444;
+        }
+        .list-group, .panel-group {
+            margin-bottom: 0;
+        }
+        .panel-group .panel+.panel-white {
+            margin-top: 0;
+        }
+        .panel-group .panel-white {
+            border-bottom: 1px solid #F5F5F5;
+            border-radius: 0;
+        }
+        .panel-white:last-child {
+            border-bottom-color: white;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+        .panel-white .panel-heading {
+            background: white;
+        }
+        .tab-pane ul {
+            padding-left: 2em;
+        }
+        .tab-pane h2 {
+            font-size: 1.2em;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #ddd;
+        }
+        .tab-pane h3 {
+            font-size: 1.1em;
+        }
+        .tab-content {
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+        }
+        #sidebar {
+            margin-top: 30px;
+            padding-right: 5px;
+            overflow: auto;
+            height: 90%;
+        }
+        .top-resource-description {
+            border-bottom: 1px solid #ddd;
+            background: #fcfcfc;
+            padding: 15px 15px 0 15px;
+            margin: -15px -15px 10px -15px;
+        }
+        .resource-description {
+            border-bottom: 1px solid #fcfcfc;
+            background: #fcfcfc;
+            padding: 15px 15px 0 15px;
+            margin: -15px -15px 10px -15px;
+        }
+        .resource-description p:last-child {
+            margin: 0;
+        }
+        .list-group .badge {
+            float: left;
+        }
+        .method_description {
+            margin-left: 85px;
+        }
+        .method_description p:last-child {
+            margin: 0;
+        }
+        .list-group-item {
+            cursor: pointer;
+        }
+        .list-group-item:hover {
+            background-color: #f5f5f5;
+        }
+    </style></head><body data-spy="scroll" data-target="#sidebar"><div class="container"><div class="row"><div class="col-md-9" role="main"><div class="page-header"><h1>NLP-API API documentation <small>version 2</small></h1><p>https://proxy.genoa.beeva.com</p><h3 id="NLP-API"><a href="#NLP-API">NLP API</a></h3><p>Created June 2015</p></div><div class="panel panel-default"><div class="panel-heading"><h3 id="_extracturl" class="panel-title">Extract URL</h3></div><div class="panel-body"><div class="top-resource-description"><p>Extract text from URL</p></div><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel__extracturl"><span class="parent"></span>/extracturl</a> <span class="methods"><a href="#" data-toggle="modal" data-target="#_extracturl_get"><span class="badge badge_get">get</span></a> <a href="#" data-toggle="modal" data-target="#_extracturl_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel__extracturl" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div data-toggle="modal" data-target="#_extracturl_get" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div><div data-toggle="modal" data-target="#_extracturl_post" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="_extracturl_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/extracturl</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#_extracturl_get_request" data-toggle="tab">Request</a></li><li><a href="#_extracturl_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_extracturl_get_request"><h3>Query Parameters</h3><ul><li><strong>URL</strong>: <em>(string )</em><p>URL to extract</p></li></ul></div><div class="tab-pane" id="_extracturl_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{ "message": "Text extracted from URL",
+  "text": "Example text",
+  "title": "Example title"}
+</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="_extracturl_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/extracturl</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#_extracturl_post_request" data-toggle="tab">Request</a></li><li><a href="#_extracturl_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_extracturl_post_request"><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "type": "object",
+  "description": "url containing the doc",
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "required": true,
+  "properties": {
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+} 
+</code></pre></div><div class="tab-pane" id="_extracturl_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{ "message": "Text extracted from URL" ,
+  "text": "Example text",
+  "title": "Example title"}
+</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="_language" class="panel-title">Language extraction</h3></div><div class="panel-body"><div class="top-resource-description"><p>Returns language (ISO 639-1)</p></div><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel__language"><span class="parent"></span>/language</a> <span class="methods"><a href="#" data-toggle="modal" data-target="#_language_get"><span class="badge badge_get">get</span></a> <a href="#" data-toggle="modal" data-target="#_language_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel__language" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div data-toggle="modal" data-target="#_language_get" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div><div data-toggle="modal" data-target="#_language_post" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="_language_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/language</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#_language_get_request" data-toggle="tab">Request</a></li><li><a href="#_language_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_language_get_request"><h3>Query Parameters</h3><ul><li><strong>text or url</strong>: <em>(string )</em><p>text or URL containing the text</p></li></ul></div><div class="tab-pane" id="_language_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{ "message": "Language extracted from text" ,
+  "language": "en"}
+</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="_language_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/language</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#_language_post_request" data-toggle="tab">Request</a></li><li><a href="#_language_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_language_post_request"><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "type": "object",
+  "description": "text extracted or URL containing text",
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "required": true,
+  "properties": {
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
+</code></pre></div><div class="tab-pane" id="_language_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{ "message": "Language extracted from text" ,
+  "language": "en"}
+              
+</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="_entities" class="panel-title">Entity extraction</h3></div><div class="panel-body"><div class="top-resource-description"><p>Extracts named entities, addresses, telephones, e-mail, social id, emojis, hashtags and dates from text. Supported english and spanish.</p></div><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel__entities"><span class="parent"></span>/entities</a> <span class="methods"><a href="#" data-toggle="modal" data-target="#_entities_get"><span class="badge badge_get">get</span></a> <a href="#" data-toggle="modal" data-target="#_entities_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel__entities" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div data-toggle="modal" data-target="#_entities_get" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div><div data-toggle="modal" data-target="#_entities_post" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="_entities_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/entities</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#_entities_get_request" data-toggle="tab">Request</a></li><li><a href="#_entities_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_entities_get_request"><h3>Query Parameters</h3><ul><li><strong>text or url</strong>: <em>(string )</em><p>text or URL containing the text</p></li></ul></div><div class="tab-pane" id="_entities_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{ "message": "Entities extracted from text" ,
+  "entitites": [
+    {"count": 1, "category": "person", "name": "Steve Jobs"}
+    {"count": 1, "category": "location", "name":  "Palo Alto, CA"},
+    {"count": 3, "category": "organization", "name":  "Apple"},
+    {"count": 1, "category": "date", "name":  "Monday"},
+    {"count": 1, "category": "email", "name":  "contact@apple.com"},
+    {"count": 1, "category": "telephone", "name":  "+44657892456"}                             
+  ]
+}
+</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="_entities_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/entities</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#_entities_post_request" data-toggle="tab">Request</a></li><li><a href="#_entities_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_entities_post_request"><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "type": "object",
+  "description": "text extracted or URL containing text",
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "required": true,
+  "properties": {
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
+</code></pre></div><div class="tab-pane" id="_entities_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{ "message": "Entities extracted from text" ,
+  "entitites": [
+    {"count": 1, "category": "person", "name": "Steve Jobs"}
+    {"count": 1, "category": "location", "name":  "Palo Alto, CA"},
+    {"count": 3, "category": "organization", "name":  "Apple"},
+    {"count": 1, "category": "date", "name":  "Monday"},
+    {"count": 1, "category": "email", "name":  "contact@apple.com"},
+    {"count": 1, "category": "telephone", "name":  "+44657892456"}                             
+  ]
+}
+          
+</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="_keywords" class="panel-title">Keyword extraction</h3></div><div class="panel-body"><div class="top-resource-description"><p>Extracts most relevant words in text (tf-idf). Supported english and spanish.</p></div><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel__keywords"><span class="parent"></span>/keywords</a> <span class="methods"><a href="#" data-toggle="modal" data-target="#_keywords_get"><span class="badge badge_get">get</span></a> <a href="#" data-toggle="modal" data-target="#_keywords_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel__keywords" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div data-toggle="modal" data-target="#_keywords_get" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div><div data-toggle="modal" data-target="#_keywords_post" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="_keywords_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/keywords</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#_keywords_get_request" data-toggle="tab">Request</a></li><li><a href="#_keywords_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_keywords_get_request"><h3>Query Parameters</h3><ul><li><strong>text or url</strong>: <em>(string )</em><p>text or URL containing the text</p></li></ul></div><div class="tab-pane" id="_keywords_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{ "message": "Keywords extracted from text" ,
+  "keywords": [
+    {"name" : "innovation", "score": 02351},
+    {"name" : "smartphone", "score": 0.19011},
+    {"name" : "applications", "score": 0.1233},
+    {"name" : "store", "score": 0.0660}                      
+  ]
+}
+</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="_keywords_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/keywords</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#_keywords_post_request" data-toggle="tab">Request</a></li><li><a href="#_keywords_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_keywords_post_request"><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "type": "object",
+  "description": "text extracted or URL containing text",
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "required": true,
+  "properties": {
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
+</code></pre></div><div class="tab-pane" id="_keywords_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{ "message": "Keywords extracted from text" ,
+  "keywords": [
+    {"name" : "innovation", "score": 02351},
+    {"name" : "smartphone", "score": 0.19011},
+    {"name" : "applications", "score": 0.1233},
+    {"name" : "store", "score": 0.0660}                      
+  ]
+}
+          
+</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="_concepts" class="panel-title">Concept extraction</h3></div><div class="panel-body"><div class="top-resource-description"><p>Extracts concepts (Linked Data entity + semantic type).</p></div><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel__concepts"><span class="parent"></span>/concepts</a> <span class="methods"><a href="#" data-toggle="modal" data-target="#_concepts_get"><span class="badge badge_get">get</span></a> <a href="#" data-toggle="modal" data-target="#_concepts_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel__concepts" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div data-toggle="modal" data-target="#_concepts_get" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div><div data-toggle="modal" data-target="#_concepts_post" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="_concepts_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/concepts</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#_concepts_get_request" data-toggle="tab">Request</a></li><li><a href="#_concepts_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_concepts_get_request"><h3>Query Parameters</h3><ul><li><strong>text or url</strong>: <em>(string )</em><p>text or URL containing the text</p></li></ul></div><div class="tab-pane" id="_concepts_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{ "message": "Concepts extracted from text" ,
+  "concepts": [
+    {"concept": 
+      {"lang": "en", 
+      "name": "Christopher Lee", 
+      "notable": 
+        {"name": "Actor", 
+        "id": "/m/02hrh1q"}, 
+      "mid": "/m/0f0kz", 
+      "score": "693.999817", 
+      "id": "/en/chistopher_lee"}, 
+    "name": "Christopher Lee"},
+    {"concept": "https://twitter.com/mayoroflondon", 
+    "name": "@mayoroflondon"}, 
+    {"concept": "https://twitter.com/hashtag/christopherlee", 
+    "name": "#christopherlee"}                    
+  ]
+}
+</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="_concepts_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/concepts</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#_concepts_post_request" data-toggle="tab">Request</a></li><li><a href="#_concepts_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_concepts_post_request"><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "type": "object",
+  "description": "text extracted or URL containing text",
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "required": true,
+  "properties": {
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
+</code></pre></div><div class="tab-pane" id="_concepts_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{ "message": "Concepts extracted from text" ,
+  "concepts": [
+    {"concept": 
+      {"lang": "en", 
+      "name": "Christopher Lee", 
+      "notable": 
+        {"name": "Actor", 
+        "id": "/m/02hrh1q"}, 
+      "mid": "/m/0f0kz", 
+      "score": "693.999817", 
+      "id": "/en/chistopher_lee"}, 
+    "name": "Christopher Lee"},
+    {"concept": "https://twitter.com/mayoroflondon", 
+    "name": "@mayoroflondon"}, 
+    {"concept": "https://twitter.com/hashtag/christopherlee", 
+    "name": "#christopherlee"}                    
+  ]
+}
+          
+</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="_relatedwords" class="panel-title">Related words extraction</h3></div><div class="panel-body"><div class="top-resource-description"><p>Returns words related to entities and most relevant words in text. Supported english and spanish.</p></div><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel__relatedwords"><span class="parent"></span>/relatedwords</a> <span class="methods"><a href="#" data-toggle="modal" data-target="#_relatedwords_get"><span class="badge badge_get">get</span></a> <a href="#" data-toggle="modal" data-target="#_relatedwords_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel__relatedwords" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div data-toggle="modal" data-target="#_relatedwords_get" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div><div data-toggle="modal" data-target="#_relatedwords_post" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="_relatedwords_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/relatedwords</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#_relatedwords_get_request" data-toggle="tab">Request</a></li><li><a href="#_relatedwords_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_relatedwords_get_request"><h3>Query Parameters</h3><ul><li><strong>text or url</strong>: <em>(string )</em><p>text or URL containing the text</p></li></ul></div><div class="tab-pane" id="_relatedwords_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{ "message": "Related words extracted from text" ,
+  "relatedwords": [
+    {"word": "dracula", 
+    "similarwords": [
+      {"name": "stoker", "similarity": 0.6398248076438904}, 
+      {"name": "bram", "similarity": 0.6193088293075562}, 
+      {"name": "vampire", "similarity": 0.6130403280258179}, 
+      {"name": "frankenstein", "similarity": 0.6062221527099609}, 
+      {"name": "lugosi", "similarity": 0.5823888182640076}
+    ]
+    }                      
+  ]
+}
+</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="_relatedwords_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/relatedwords</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#_relatedwords_post_request" data-toggle="tab">Request</a></li><li><a href="#_relatedwords_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_relatedwords_post_request"><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "type": "object",
+  "description": "text extracted or URL containing text",
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "required": true,
+  "properties": {
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
+</code></pre></div><div class="tab-pane" id="_relatedwords_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{ "message": "Related words extracted from text" ,
+  "relatedwords": [
+    {"word": "dracula", 
+    "similarwords": [
+      {"name": "stoker", "similarity": 0.6398248076438904}, 
+      {"name": "bram", "similarity": 0.6193088293075562}, 
+      {"name": "vampire", "similarity": 0.6130403280258179}, 
+      {"name": "frankenstein", "similarity": 0.6062221527099609}, 
+      {"name": "lugosi", "similarity": 0.5823888182640076}
+    ]
+    }                      
+  ]
+}
+          
+</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="_relationextraction" class="panel-title">Relation extraction</h3></div><div class="panel-body"><div class="top-resource-description"><p>Extracts things related to other things in a sentence, that is, extracts the subject, object and verb in a sentence. Supported english and spanish.</p></div><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel__relationextraction"><span class="parent"></span>/relationextraction</a> <span class="methods"><a href="#" data-toggle="modal" data-target="#_relationextraction_get"><span class="badge badge_get">get</span></a> <a href="#" data-toggle="modal" data-target="#_relationextraction_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel__relationextraction" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div data-toggle="modal" data-target="#_relationextraction_get" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div><div data-toggle="modal" data-target="#_relationextraction_post" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="_relationextraction_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/relationextraction</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#_relationextraction_get_request" data-toggle="tab">Request</a></li><li><a href="#_relationextraction_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_relationextraction_get_request"><h3>Query Parameters</h3><ul><li><strong>sentence</strong>: <em>(string )</em><p>well-formed sentence</p></li></ul></div><div class="tab-pane" id="_relationextraction_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{ "message": "Relation extraction" ,
+  "relations": [
+    {"verb": "has died", "object": "at the age after being hospitalised for respiratory problems", "subject": "Sir Christopher Lee"}
+  ]
+}
+</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="_relationextraction_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/relationextraction</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#_relationextraction_post_request" data-toggle="tab">Request</a></li><li><a href="#_relationextraction_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_relationextraction_post_request"><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "type": "object",
+  "description": "well-formed sentence",
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "required": true,
+  "properties": {
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+} 
+</code></pre></div><div class="tab-pane" id="_relationextraction_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{ "message": "Relation extraction" ,
+  "relations": [
+    {"verb": "has died", "object": "at the age after being hospitalised for respiratory problems", "subject": "Sir Christopher Lee"}
+  ]
+}
+</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="_emojisextraction" class="panel-title">Emojis extraction</h3></div><div class="panel-body"><div class="top-resource-description"><p>Extracts emojis in a sentence.</p></div><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel__emojisextraction"><span class="parent"></span>/emojisextraction</a> <span class="methods"><a href="#" data-toggle="modal" data-target="#_emojisextraction_get"><span class="badge badge_get">get</span></a> <a href="#" data-toggle="modal" data-target="#_emojisextraction_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel__emojisextraction" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div data-toggle="modal" data-target="#_emojisextraction_get" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div><div data-toggle="modal" data-target="#_emojisextraction_post" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="_emojisextraction_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/emojisextraction</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#_emojisextraction_get_request" data-toggle="tab">Request</a></li><li><a href="#_emojisextraction_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_emojisextraction_get_request"><h3>Query Parameters</h3><ul><li><strong>sentence</strong>: <em>(string )</em><p>well-formed sentence</p></li></ul></div><div class="tab-pane" id="_emojisextraction_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{ "message": "Emojis extraction" ,
+  "emojis": [
+    {"count": 2, "description": [{"category": "People", "name": "VICTORY HAND"}], "emoji": "\u270c"}
+  ]
+}
+</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="_emojisextraction_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/emojisextraction</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#_emojisextraction_post_request" data-toggle="tab">Request</a></li><li><a href="#_emojisextraction_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_emojisextraction_post_request"><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "type": "object",
+  "description": "well-formed sentence",
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "required": true,
+  "properties": {
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+} 
+</code></pre></div><div class="tab-pane" id="_emojisextraction_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{ "message": "Emojis extraction" ,
+  "emojis": [
+    {"count": 2, "description": [{"category": "People", "name": "VICTORY HAND"}], "emoji": "\u270c"}
+  ]
+}
+</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="_socialextraction" class="panel-title">Hashtags and social ids extraction</h3></div><div class="panel-body"><div class="top-resource-description"><p>Extracts hashtags and ids from Twitter and Instagram in a sentence.</p></div><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel__socialextraction"><span class="parent"></span>/socialextraction</a> <span class="methods"><a href="#" data-toggle="modal" data-target="#_socialextraction_get"><span class="badge badge_get">get</span></a> <a href="#" data-toggle="modal" data-target="#_socialextraction_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel__socialextraction" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div data-toggle="modal" data-target="#_socialextraction_get" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div><div data-toggle="modal" data-target="#_socialextraction_post" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="_socialextraction_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/socialextraction</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#_socialextraction_get_request" data-toggle="tab">Request</a></li><li><a href="#_socialextraction_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_socialextraction_get_request"><h3>Query Parameters</h3><ul><li><strong>sentence</strong>: <em>(string )</em><p>well-formed sentence</p></li></ul></div><div class="tab-pane" id="_socialextraction_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{ "message": "Social information extraction" ,
+  {"social": 
+    {
+      "hashtags": 
+        [{"count": 1, "link": "https://twitter.com/hashtag/legend", "type": "twitter", "name": "#legend"}, {"count": 1, "link": "https://twitter.com/hashtag/christopherlee", "type": "twitter", "name": "#christopherlee"}], 
+      "users": 
+        [{"count": 1, "link": "https://twitter.com/omid9", "type": "twitter", "name": "@omid9"}, {"count": 1, "link": "https://twitter.com/domswildthings", "type": "twitter", "name": "@domswildthings"}, {"count": 1, "link": "https://twitter.com/woodelijah", "type": "twitter", "name": "@woodelijah"}]
+    }
+  }
+}
+</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="_socialextraction_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/socialextraction</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#_socialextraction_post_request" data-toggle="tab">Request</a></li><li><a href="#_socialextraction_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="_socialextraction_post_request"><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "type": "object",
+  "description": "well-formed sentence",
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "required": true,
+  "properties": {
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+} 
+</code></pre></div><div class="tab-pane" id="_socialextraction_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{ "message": "Social information extraction" ,
+  {"social": 
+    {
+      "hashtags": 
+        [{"count": 1, "link": "https://twitter.com/hashtag/legend", "type": "twitter", "name": "#legend"}, {"count": 1, "link": "https://twitter.com/hashtag/christopherlee", "type": "twitter", "name": "#christopherlee"}], 
+      "users": 
+        [{"count": 1, "link": "https://twitter.com/omid9", "type": "twitter", "name": "@omid9"}, {"count": 1, "link": "https://twitter.com/domswildthings", "type": "twitter", "name": "@domswildthings"}, {"count": 1, "link": "https://twitter.com/woodelijah", "type": "twitter", "name": "@woodelijah"}]
+    }
+  }
+}              </code></pre></div></div></div></div></div></div></div></div></div></div></div><div class="col-md-3"><div id="sidebar" class="hidden-print affix" role="complementary"><ul class="nav nav-pills nav-stacked"><li><a href="#_extracturl">Extract URL</a></li><li><a href="#_language">Language extraction</a></li><li><a href="#_entities">Entity extraction</a></li><li><a href="#_keywords">Keyword extraction</a></li><li><a href="#_concepts">Concept extraction</a></li><li><a href="#_relatedwords">Related words extraction</a></li><li><a href="#_relationextraction">Relation extraction</a></li><li><a href="#_emojisextraction">Emojis extraction</a></li><li><a href="#_socialextraction">Hashtags and social ids extraction</a></li></ul></div></div></div></div></body></html>
